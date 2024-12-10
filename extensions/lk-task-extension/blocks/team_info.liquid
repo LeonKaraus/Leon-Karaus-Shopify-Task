@@ -1,0 +1,26 @@
+{% if product.metafields.custom.team %}
+  {% assign team = product.metafields.custom.team.value %}
+  
+  <div class="team-info">
+    <h3>Verwendet von: {{ team.name }}</h3>
+    
+    {% if team.img %}
+      <img src="{{ team.img | file_url }}" alt="{{ team.name }}" width="200" height"100">
+    {% endif %}
+    
+    {% if team.url %}
+      <br/>
+      <a href="{{ team.url }}" target="_blank">Mehr erfahren</a>
+    {% endif %}
+  </div>
+{% else %}
+  <p>Dieses Produkt ist keinem Team zugeordnet.</p>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Team Info",
+  "target": "section"
+  
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "15f50f114e8916f90986bc479d312851"
+application_url = "https://advanced-bachelor-highland-folding.trycloudflare.com"
+embedded = true
+name = "LKTask"
+handle = "lktask"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://advanced-bachelor-highland-folding.trycloudflare.com/auth/callback",
+  "https://advanced-bachelor-highland-folding.trycloudflare.com/auth/shopify/callback",
+  "https://advanced-bachelor-highland-folding.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "leonkaraustask.myshopify.com"
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
